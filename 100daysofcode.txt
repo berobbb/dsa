@@ -1,0 +1,96 @@
+//100 days of code
+
+
+DAY 1:-
+CODE 1: Find the maximum element in an arrray
+
+
+Approach:-
+->Initialise the maximum element as INT_MIN
+->Now iterate through the array if any element is greater than max then assign it as the maximum array
+
+
+Code:-
+#include <bits/stdc++.h>
+int largestElement(vector<int> &arr, int n) {
+// Write your code here.
+int max=INT_MIN;
+for(int i=0;i<n;i++)
+{
+if(arr[i]>max)
+{
+max=arr[i];
+}
+}
+return max;
+}
+
+
+
+CODE 2: Single Element in an array
+
+Explanation: Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+Example 1:
+
+Input: nums = [2,2,1]
+Output: 1
+
+Example 2:
+
+Input: nums = [4,1,2,1,2]
+Output: 4
+
+
+Approach :XOR every element with 0
+Code:-
+
+
+
+
+class Solution {
+public:
+int singleNumber(vector<int>& nums) {
+int x=0;
+for(int i=0;i<nums.size();i++)
+{
+x=x^nums[i];
+}
+return x;
+
+}
+};
+DAY 2-Given a binary array nums, return the maximum number of consecutive 1's in the array.
+
+Example 1:
+
+Input: nums = [1,1,0,1,1,1]
+Output: 3
+Explanation: The first two digits or the last three digits are consecutive 1s. The maximum number of consecutive 1s is 3.
+ 
+
+
+APPROACH:  Take a counter variable c=0 and maxi=INT_MIN
+->Iterate through the array if the number is 1 then c++ else c=0
+->compare the greater of c and maxi at last
+
+
+code
+class Solution {
+public:
+int findMaxConsecutiveOnes(vector<int>& nums) {
+int c=0,maxi=INT_MIN;
+for(int i=0;i<nums.size();i++)
+{
+if(nums[i]==1)
+{
+c++;
+}
+else
+{
+c=0;
+}
+maxi=max(maxi,c);
+}
+return maxi;
+}
+};
